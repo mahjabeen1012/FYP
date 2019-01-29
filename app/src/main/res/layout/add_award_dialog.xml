@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/add_awardialog">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        android:id="@+id/edit_intro_dialog"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Honors and Award"
+            />
+
+        <TextView
+            android:id="@+id/titleLabel"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Title *"
+            />
+
+
+        <EditText
+            android:id="@+id/titleAddAward"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:focusable="true"
+            />
+
+        <TextView
+            android:id="@+id/descriptionLabelAward"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Description"
+            />
+
+
+        <EditText
+            android:id="@+id/descriptionAddAward"
+            android:textSize="15dp"
+            android:maxLength="35"
+            android:hint="Only for CV purpose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            />
+
+
+        <TextView
+            android:id="@+id/yearLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Year *"
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:backgroundTint="@color/darkGrey"
+                android:textColor="@color/darkGrey"
+                android:id="@+id/addAwardYear"
+                android:textSize="15dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                />
+
+            <Button
+                android:id="@+id/toButtonAddAwards"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Select Date"
+                android:focusable="true"
+
+                android:textSize="10dp"
+                android:layout_gravity="right"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="right">
+
+            <Button
+
+                android:id="@+id/addAwardDialogA"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Add"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/CancelAwardDialogA"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Cancel"
+                android:background="@color/primaryDark"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

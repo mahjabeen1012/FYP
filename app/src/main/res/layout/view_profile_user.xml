@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+
+        <Button
+            android:id="@+id/backProfileUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/back"
+            android:drawableTint="@color/primary"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/myPosts"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                app:layout_constraintTop_toBottomOf="@+id/displayname"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="20dp"
+                android:scrollbars="vertical"/>
+
+            <LinearLayout
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/primaryDark"
+                android:orientation="vertical"
+                android:layout_gravity="bottom"
+                android:gravity="bottom">
+
+                <Button
+                    android:id="@+id/myPostsRefresh"
+                    android:background="@drawable/refresh"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:backgroundTint="@color/white"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        android:id="@+id/edit_intro_dialog"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Projects"
+            />
+
+        <TextView
+            android:id="@+id/addProjectTitleLabel"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Title *"
+            />
+
+
+        <EditText
+            android:id="@+id/titleAddProject"
+            android:textSize="15dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            />
+
+
+        <TextView
+            android:id="@+id/linkAddProject"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Description *"
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:backgroundTint="@color/darkGrey"
+                android:textColor="@color/darkGrey"
+                android:id="@+id/addProjectLink"
+                android:textSize="15dp"
+                android:focusable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="right">
+
+            <Button
+
+                android:id="@+id/addProjectDialogA"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Add"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/CancelProjectDialogA"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Cancel"
+                android:background="@color/primaryDark"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

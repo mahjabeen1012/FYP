@@ -1,0 +1,115 @@
+{
+  "project_info": {
+    "project_number": "1043772800125",
+    "firebase_url": "https://fastquadconnectify.firebaseio.com",
+    "project_id": "fastquadconnectify",
+    "storage_bucket": "fastquadconnectify.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043772800125:android:5b6ac6644c1b7ac5",
+        "android_client_info": {
+          "package_name": "com.childcareapp.pivak.chatappactivity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043772800125-q04iuprmdl4ndl56lrr6iggc6u69csea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.childcareapp.pivak.chatappactivity",
+            "certificate_hash": "8e957c4b73f330599e5d44a1519cb4e47f6cc7fd"
+          }
+        },
+        {
+          "client_id": "1043772800125-a69r5lltispndev5jq18beuth8evt1sg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTvAdj-D1ef3LMx8qbnctxMHF5fwsFCwM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043772800125-a69r5lltispndev5jq18beuth8evt1sg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043772800125:android:dd1257393caa74ab",
+        "android_client_info": {
+          "package_name": "com.childcareapp.pivak.fyplogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043772800125-ns2l9bd6cj4f1psvpvfdl05sja2dhhiq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.childcareapp.pivak.fyplogin",
+            "certificate_hash": "adf978066b8eaa4a05ee26706c27f690be5cffb5"
+          }
+        },
+        {
+          "client_id": "1043772800125-7bk3obvj2rruq6tb2ieaq22tm2s9ijbt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.childcareapp.pivak.fyplogin",
+            "certificate_hash": "8e957c4b73f330599e5d44a1519cb4e47f6cc7fd"
+          }
+        },
+        {
+          "client_id": "1043772800125-uidiumikshoqnr0hmu40adrb7t45uf3n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.childcareapp.pivak.fyplogin",
+            "certificate_hash": "da747ca5c6da699f3993f91119b3c4a8e4153eeb"
+          }
+        },
+        {
+          "client_id": "1043772800125-a69r5lltispndev5jq18beuth8evt1sg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTvAdj-D1ef3LMx8qbnctxMHF5fwsFCwM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043772800125-a69r5lltispndev5jq18beuth8evt1sg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:id="@+id/layout"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@drawable/custom_box_cv">
+
+
+
+        <ImageView
+            android:id="@+id/cvImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="2dp" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/cvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cvAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/cvImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466" />
+
+        <TextView
+            android:id="@+id/cvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="6dp"
+            app:layout_constraintStart_toEndOf="@+id/cvImage"
+            app:layout_constraintTop_toBottomOf="@+id/cvName" />
+
+
+        <TextView
+            android:id="@+id/cvContactNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="6dp"
+            app:layout_constraintStart_toEndOf="@+id/cvImage"
+            app:layout_constraintTop_toBottomOf="@+id/cvEmail" />
+
+        <TextView
+            android:id="@+id/cvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="6dp"
+            app:layout_constraintBottom_toTopOf="@+id/cvContactNumber"
+            app:layout_constraintStart_toEndOf="@+id/cvImage"
+            app:layout_constraintTop_toBottomOf="@+id/cvAddress"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:weightSum="7"
+            app:layout_constraintTop_toBottomOf="@+id/cvImage"
+            tools:layout_editor_absoluteX="30dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2"
+                >
+
+                <TextView
+                    android:id="@+id/aboutMeLabel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="About Me"
+                    android:textColor="@color/black"
+                    android:textSize="7dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/lightGrey" />
+
+
+
+                <me.biubiubiu.justifytext.library.JustifyTextView
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/aboutMeCV"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/darkGrey"
+                    android:textSize="5dp" />
+
+                <TextView
+                    android:id="@+id/cvSkillsLabel"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="Skills"
+                    android:textColor="@color/black"
+                    android:textSize="7dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/lightGrey" />
+
+
+                <GridView
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/gridview_skills_cv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:numColumns="2"
+                    />
+
+                <TextView
+                    android:id="@+id/cvSoftwareLabel"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="Tools and Softwares"
+                    android:textColor="@color/black"
+                    android:textSize="7dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/lightGrey" />
+
+
+                <GridView
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/gridview_softwares_cv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:numColumns="2"
+                    />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="5"
+                >
+
+                <TextView
+                    android:id="@+id/cvEducationLabel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Education"
+                    android:textColor="@color/black"
+                    android:textSize="7dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/lightGrey" />
+
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightGrey" />
+
+                <ListView
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/listview_education_cv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:id="@+id/cvExperienceLabel"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Experience"
+                    android:textColor="@color/black"
+                    android:textSize="7dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightGrey" />
+
+
+                <ListView
+                    android:id="@+id/listview_experience_cv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    />
+
+                <TextView
+                    android:id="@+id/cvAwardsLabel"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Achievements and Awards"
+                    android:textColor="@color/black"
+                    android:textSize="7dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightGrey" />
+
+
+                <ListView
+                    android:id="@+id/listview_awards_cv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    />
+
+                <TextView
+                    android:id="@+id/cvProjectsLabel"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Projects"
+                    android:textColor="@color/black"
+                    android:textSize="7dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightGrey" />
+
+
+                <ListView
+                    android:id="@+id/listview_projects_cv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270dp"
+            android:layout_marginEnd="18dp"
+            android:text="iusd"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cvImage"
+            tools:layout_editor_absoluteY="0dp" />
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>

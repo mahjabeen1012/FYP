@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+>
+
+    <com.github.abdularis.civ.CircleImageView
+        android:id="@+id/like_image"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/profileimage"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/like_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Name"
+        android:textColor="@color/darkGrey"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/like_image" />
+
+
+</android.support.constraint.ConstraintLayout>

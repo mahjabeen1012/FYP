@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        android:id="@+id/edit_intro_dialog"
+        android:orientation="vertical">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.github.abdularis.civ.CircleImageView
+                android:id="@+id/editDialogImageview"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/profileimage"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <Button
+                android:id="@+id/uploadImage"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/uploadpost"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.69"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editDialogImageview"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="MissingConstraints"></Button>
+        </android.support.constraint.ConstraintLayout>
+
+
+        <TextView
+            android:background="@color/primaryDark"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Personal Information"
+            />
+
+        <TextView
+            android:id="@+id/fNameLabel"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" First Name *"
+            android:focusable="true"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/firstNameEdit"
+            android:textSize="15dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/lNameLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Last Name *"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/lastNameEdit"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            />
+
+        <TextView
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Headline *"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/headlineEdit"
+            android:focusable="true"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Current Work"
+            />
+
+        <TextView
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Current Position *"
+            />
+
+        <Spinner
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/currentPositionEdit"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            >
+        </Spinner>
+
+
+
+
+        <TextView
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Location"
+            />
+
+
+        <TextView
+            android:id="@+id/cityProfileEditLabel"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" City *"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/cityEdit"
+            android:textSize="15dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/countryProfileEditLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Country *"
+            />
+
+        <EditText
+            android:id="@+id/coutryEdit"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            />
+
+
+
+
+        <TextView
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Zip Code"
+            />
+
+
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/zipcodeEdit"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Contact"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Contact Number"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/contactNumberEdit"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/emailProfileEditLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Email *"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/emailEdit"
+            android:textSize="15dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <Button
+
+                android:id="@+id/saveChanges"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Save"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/CancelChanges"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Cancel"
+                android:background="@color/primaryDark"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

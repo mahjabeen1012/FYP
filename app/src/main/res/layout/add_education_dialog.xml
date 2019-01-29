@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        android:id="@+id/edit_intro_dialog"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Education"
+            />
+
+        <TextView
+            android:id="@+id/degreeLabelEducation"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Degree *"
+            />
+
+
+        <EditText
+            android:id="@+id/degreeAddEducation"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:focusable="true"
+            />
+
+
+        <TextView
+            android:id="@+id/instLabelEducation"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Institution *"
+            />
+
+        <EditText
+            android:id="@+id/institutionAddEduzation"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkGrey"
+            android:focusable="true"
+            android:textColor="@color/darkGrey"
+            />
+
+
+        <TextView
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Location"
+            />
+
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/cityLabelEducation"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" City *"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/cityAddEducation"
+            android:textSize="15dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+        <TextView
+            android:id="@+id/countryLabelEducation"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Country *"
+            />
+
+        <EditText
+            android:id="@+id/coutryAddEducation"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Duration"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/sDateLabelEducation"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Starting Date *"
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:backgroundTint="@color/darkGrey"
+                android:textColor="@color/darkGrey"
+                android:id="@+id/fromAddEducation"
+                android:textSize="15dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                />
+
+            <Button
+                android:id="@+id/fromButtonAddEducation"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Select Date"
+                android:focusable="true"
+                android:textSize="10dp"
+                android:layout_gravity="right"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/eDateLabelEducation"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Ending Date *"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:backgroundTint="@color/darkGrey"
+                android:textColor="@color/darkGrey"
+                android:id="@+id/toAddEducation"
+                android:textSize="15dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                />
+
+            <Button
+                android:id="@+id/toButtonAddEducation"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Select Date"
+                android:textSize="10dp"
+                android:focusable="true"
+                android:layout_gravity="right"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"
+                />
+
+
+        </LinearLayout>
+        <CheckBox
+            android:id="@+id/currentlyStudyHere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/darkGrey"
+            android:padding="8dp"
+            android:text="I currently study here"
+            android:textColor="@color/darkGrey"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="right">
+
+            <Button
+
+                android:id="@+id/addEduDialogA"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Add"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/CancelEduDialogA"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Cancel"
+                android:background="@color/primaryDark"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        tools:context=".MainActivity"
+        android:id="@+id/myProfileUser"
+        >
+
+        <LinearLayout
+            android:id="@+id/pictureAndName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            >
+
+
+            <com.github.abdularis.civ.CircleImageView
+                android:id="@+id/studentProfilePhoto"
+                android:layout_width="111dp"
+                android:layout_height="111dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/profileimage"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <TextView
+                android:id="@+id/studentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textAlignment="textStart"
+                android:textColor="@color/darkGrey"
+                android:textSize="20dp"
+                tools:ignore="RtlCompat"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/pictureAndName"
+            tools:layout_editor_absoluteY="5dp"
+            tools:ignore="MissingConstraints"></Button>
+
+
+        <LinearLayout
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pictureAndName"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:id="@+id/currentPosition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/job1"
+                android:drawablePadding="10dp"
+                android:gravity="right"
+                android:textAlignment="viewStart"
+                android:textColor="@color/darkGrey"
+                android:textSize="13dp"
+                tools:ignore="RtlCompat"
+                />
+
+            <ProgressBar
+                android:id="@+id/userProfileProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/currentEducation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dp"
+                android:drawableLeft="@drawable/education"
+                android:drawablePadding="10dp"
+                android:gravity="right"
+                android:textAlignment="viewStart"
+                android:textColor="@color/darkGrey"
+                android:textSize="13dp"
+                tools:ignore="RtlCompat"
+                />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dp"
+                android:drawableLeft="@drawable/email"
+                android:drawablePadding="10dp"
+                android:gravity="right"
+                android:textAlignment="viewStart"
+                android:textColor="@color/darkGrey"
+                android:textSize="13dp"
+                tools:ignore="RtlCompat"
+                />
+
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dp"
+                android:drawableLeft="@drawable/location"
+                android:drawablePadding="10dp"
+                android:gravity="right"
+                android:textAlignment="viewStart"
+                android:textColor="@color/darkGrey"
+                android:textSize="13dp"
+                tools:ignore="RtlCompat"
+                />
+
+            <View
+                android:id="@+id/view"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/primary"
+                />
+
+
+            <TextView
+                android:id="@+id/headline"
+                android:textStyle="italic"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:gravity="right"
+                android:textAlignment="viewStart"
+                android:textColor="@color/lightGrey"
+                android:textSize="13dp"
+                tools:ignore="RtlCompat"
+                />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/primary"
+
+                />
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:backgroundTint="@color/yellow"
+                        android:id="@+id/experienceHomeUser"
+                        android:layout_width="fill_parent"
+                        android:layout_height="70dp"
+                        android:drawableTop="@drawable/experience"
+                        android:drawableTint="@color/white"
+                        android:text="Experience"
+                        android:layout_gravity="left"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        />
+
+                    <Button
+                        android:backgroundTint="@color/green"
+                        android:id="@+id/honorsAndAwardsHomeUser"
+                        android:layout_width="fill_parent"
+                        android:layout_height="70dp"
+                        android:drawableTop="@drawable/awards"
+                        android:drawableTint="@color/white"
+                        android:text="Awards"
+                        android:layout_gravity="left"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        />
+
+                    <Button
+                        android:backgroundTint="@color/blue"
+                        android:id="@+id/softwaresHomeUser"
+                        android:layout_width="fill_parent"
+                        android:layout_height="70dp"
+                        android:drawableTop="@drawable/softwares"
+                        android:drawableTint="@color/white"
+                        android:text="Softwares"
+                        android:layout_gravity="left"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:backgroundTint="@color/redd"
+                        android:id="@+id/educationHomeUser"
+                        android:layout_width="fill_parent"
+                        android:layout_height="70dp"
+                        android:drawableTop="@drawable/school"
+                        android:drawableTint="@color/white"
+                        android:text="Education"
+                        android:layout_gravity="right"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        />
+
+                    <Button
+                        android:backgroundTint="@color/purple"
+                        android:id="@+id/skillHomeUser"
+                        android:layout_width="fill_parent"
+                        android:layout_height="70dp"
+                        android:drawableTop="@drawable/skills"
+                        android:drawableTint="@color/white"
+                        android:text="Skills"
+                        android:layout_gravity="right"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        />
+
+                    <Button
+                        android:backgroundTint="@color/otherBlur"
+                        android:id="@+id/projectHomeUser"
+                        android:layout_width="fill_parent"
+                        android:layout_height="70dp"
+                        android:drawableTop="@drawable/projects"
+                        android:drawableTint="@color/white"
+                        android:text="Projects"
+                        android:layout_gravity="right"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:backgroundTint="@color/darkPink"
+                android:id="@+id/postsHomeUser"
+                android:layout_width="fill_parent"
+                android:layout_height="70dp"
+                android:drawableTop="@drawable/posts"
+                android:drawableTint="@color/white"
+                android:text="My Posts"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

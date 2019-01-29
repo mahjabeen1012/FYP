@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        android:id="@+id/edit_intro_dialog"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Work"
+            />
+
+        <TextView
+            android:id="@+id/designationLabel"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Designation *"
+            />
+
+
+        <EditText
+            android:id="@+id/designationAddExperience"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            />
+
+
+        <TextView
+            android:id="@+id/organizationLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Organization *"
+            />
+
+        <EditText
+            android:id="@+id/companyAddExperience"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            />
+
+
+        <TextView
+            android:id="@+id/descriptionLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Description "
+            />
+
+        <EditText
+            android:id="@+id/descriptionAddExperience"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="35"
+            android:focusable="true"
+            android:hint="Only for CV purpose"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            />
+
+
+
+
+        <TextView
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Location"
+            />
+
+
+
+        <TextView
+            android:id="@+id/cityLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" City *"
+            android:focusable="true"
+            android:layout_marginTop="10dp"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/cityAddExperience"
+            android:textSize="15dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/countryLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Country *"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/coutryAddExperience"
+            android:textSize="15dp"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            />
+
+
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Duration"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/sDateLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Starting Date *"
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:backgroundTint="@color/darkGrey"
+                android:textColor="@color/darkGrey"
+                android:id="@+id/toAddExperience"
+                android:textSize="15dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                />
+
+            <Button
+                android:id="@+id/toButtonAddExperience"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Select Date"
+                android:textSize="10dp"
+                android:focusable="true"
+                android:layout_gravity="right"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/eDateLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Ending Date *"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:backgroundTint="@color/darkGrey"
+                android:textColor="@color/darkGrey"
+                android:id="@+id/fromAddExperience"
+                android:textSize="15dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                />
+
+            <Button
+                android:id="@+id/fromButtonAddExperience"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Select Date"
+                android:textSize="10dp"
+                android:focusable="true"
+                android:layout_gravity="right"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"
+                />
+
+
+        </LinearLayout>
+        <CheckBox
+            android:id="@+id/currentlyWorkHere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/darkGrey"
+            android:padding="8dp"
+            android:text="I currently work here"
+            android:textColor="@color/darkGrey"
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="right">
+
+            <Button
+
+                android:id="@+id/addExperienceDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Add"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/CancelExperienceDialog"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Cancel"
+                android:background="@color/primaryDark"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

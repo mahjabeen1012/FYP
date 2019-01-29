@@ -1,0 +1,173 @@
+<resources>
+    <string name="app_name">FYP Login</string>
+    <string name="title_activity_student_home">StudentHome</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_alumni_home">AlumniHome</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_faculty_home">FacultyHome</string>
+    <string name="title_activity_company_home">CompanyHome</string>
+
+
+    <string-array name="Batches">
+
+        <item></item>
+        <item>2010</item>
+        <item>2011</item>
+        <item>2012</item>
+        <item>2013</item>
+        <item>2014</item>
+        <item>2015</item>
+    </string-array>
+
+    <string-array name="Degree">
+        <item></item>
+        <item>BS</item>
+        <item>MS</item>
+        <item>PHD</item>
+    </string-array>
+
+    <string-array name="Descipline">
+        <item></item>
+        <item>Computer Science</item>
+        <item>Civil Engineering</item>
+        <item>Electric Engineering</item>
+        <item>Management Sciences</item>
+        <item>Accounting and Finance</item>
+    </string-array>
+
+    <string-array name="Campus">
+        <item></item>
+        <item>Islamabad</item>
+        <item>Lahore</item>
+        <item>Peshawar</item>
+        <item>Karachi</item>
+        <item>Chiniot-Faisalabad</item>
+    </string-array>
+
+    <string-array name="Softwares">
+        <item>Adobe Photoshop</item>
+        <item>Adobe Indesign CC</item>
+        <item>Adobe Creative Suite</item>
+        <item>Adobe Illustrator</item>
+        <item>A++</item>
+        <item>C</item>
+        <item>C++</item>
+        <item>C#</item>
+        <item>Visual C++</item>
+        <item>PHP</item>
+        <item>Ruby</item>
+        <item>Cascading Style Sheets (CSS)</item>
+        <item>F#</item>
+        <item>R</item>
+        <item>Kotlin</item>
+        <item>HTML</item>
+        <item>HTML5</item>
+        <item>java</item>
+        <item>javaScript</item>
+        <item>j#</item>
+        <item>JSON</item>
+        <item>Python</item>
+        <item>Visual Basic</item>
+        <item>AutoCAD</item>
+        <item>JIRA</item>
+    </string-array>
+
+    <string-array name="Skills">
+
+        <item>Analytical Skills</item>
+        <item>Advertising</item>
+        <item>Agile Methodologies</item>
+        <item>Accounting</item>
+        <item>ASP.NET</item>
+        <item>ASP.NET MVC</item>
+        <item>Android</item>
+
+        <item>Business Development</item>
+        <item>Business Strategy</item>
+        <item>Business Process Improvement</item>
+        <item>Budgeting</item>
+        <item>Business Analysis</item>
+        <item>Business Planning</item>
+        <item>Banking</item>
+        <item>Business Intelligence</item>
+        <item>Business-to-Business(B2B)</item>
+        <item>Brand Development</item>
+        <item>Blogging</item>
+        <item>Brand Management</item>
+        <item>Business Relationship Management</item>
+        <item>Business Strategy</item>
+        <item>Budgeting</item>
+
+        <item>Change Management</item>
+        <item>Coaching</item>
+        <item>Contract Negotiation</item>
+        <item>Customer Relationship Management (CRM)</item>
+        <item>Communication</item>
+        <item>Cross-functional Team Leadership</item>
+
+        <item>Data Analysis</item>
+        <item>Digital Marketing</item>
+        <item>Data Entry</item>
+
+        <item>Event Planning</item>
+        <item>Event Management</item>
+        <item></item>
+        <item>E-commerce</item>
+        <item>Entrepreneurship</item>
+        <item>Enterprise Resource Planning</item>
+        <item>Eclipse</item>
+
+        <item>Financial Analysis</item>
+        <item>Finance</item>
+        <item>Fundraising</item>
+        <item>Financial Accounting</item>
+        <item>Financial Modeling</item>
+
+        <item>Graphic Design</item>
+        <item>Human Resources</item>
+
+        <item>jQuery</item>
+
+        <item>Leadership</item>
+        <item>Linux</item>
+        <item>Lean Manufacturing</item>
+
+        <item>Microsoft Office</item>
+        <item>Microsoft Excel</item>
+        <item>Microsoft Powerpoint</item>
+        <item>Management</item>
+        <item>Marketing Strategy</item>
+        <item>MySQL</item>
+
+        <item>Networking</item>
+        <item>.NET Framework</item>
+
+        <item>Public Speaking</item>
+
+        <item> Software Quality Assurance</item>
+        <item>Social Media Marketing</item>
+        <item>Microsoft SQL Server</item>
+        <item>Unix</item>
+        <item>User Interface Design</item>
+
+        <item>Video Editing</item>
+        <item>Visual Studio</item>
+        <item>VMware</item>
+        <item>Visio</item>
+
+        <item>Web Design</item>
+        <item>Web Development</item>
+        <item>Web Services</item>
+        <item>Wordpress</item>
+        <item>Proposal Writing</item>
+        <item>Report Writing</item>
+
+    </string-array>
+
+</resources>

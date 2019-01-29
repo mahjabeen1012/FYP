@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="3dp"
+    android:paddingBottom="1dp">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:paddingRight="2dp">
+
+
+        <TextView
+            android:id="@+id/awardDurationCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="2015 to 2019"
+            android:textColor="@color/lightGrey"
+            android:textSize="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/awardTitleCV"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="-1dp" />
+
+
+        <TextView
+            android:id="@+id/awardTitleCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="5dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/awardDurationCV"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/awardDescriptionCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textAlignment="textStart"
+            android:textColor="@color/darkGrey"
+            android:textSize="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/awardTitleCV"
+            tools:layout_editor_absoluteX="0dp" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>

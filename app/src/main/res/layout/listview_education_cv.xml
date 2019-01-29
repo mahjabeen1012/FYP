@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:paddingRight="2dp">
+
+
+        <TextView
+            android:id="@+id/educationDurationCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="2015 to 2019"
+            android:textColor="@color/lightGrey"
+            android:textSize="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/educationInstitutionCV"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="-1dp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/lightGrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/educationDurationCV" />
+
+
+        <TextView
+            android:id="@+id/educationInstitutionCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Institution"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="5dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/educationDurationCV"
+            tools:layout_editor_absoluteY="0dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/educationDegreeCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:text="Degree"
+            android:textAlignment="textStart"
+            android:textColor="@color/darkGrey"
+            android:textSize="5dp"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/educationInstitutionCV" />
+
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>

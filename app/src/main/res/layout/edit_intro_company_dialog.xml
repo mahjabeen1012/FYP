@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        android:id="@+id/edit_intro_dialog"
+        android:orientation="vertical">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            tx
+
+            <com.github.abdularis.civ.CircleImageView
+                android:id="@+id/editDialogImageviewCompany"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/profileimage"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <Button
+                android:id="@+id/uploadImageCompany"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/uploadpost"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.69"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editDialogImageviewCompany"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="MissingConstraints"></Button>
+        </android.support.constraint.ConstraintLayout>
+
+
+
+        <TextView
+            android:id="@+id/companyNameLabel"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Company Name *"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/companyNameEdit"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Location"
+            />
+
+
+        <TextView
+            android:id="@+id/companyCityLabel"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" City *"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/cityEditCompany"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/comapnyCountryLabel"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Country *"
+            />
+
+        <EditText
+            android:id="@+id/coutryEditCompany"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            />
+
+
+
+
+        <TextView
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Zip Code"
+            />
+
+
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/zipcodeEditCompany"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:background="@color/primaryDark"
+            android:drawablePadding="12dp"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Contact"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Contact Number"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/contactNumberEditCompany"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Email *"
+            android:id="@+id/companyEmailLabel"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/emailEditCompany"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Facebook"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/facebookEditCompany"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Twitter"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/twitterEditCompany"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Linked in"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/linkedinEditCompany"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:textColor="@color/darkGrey"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Website *"
+            android:id="@+id/companyWebsiteLabel"
+            />
+
+        <EditText
+            android:backgroundTint="@color/darkGrey"
+            android:textColor="@color/darkGrey"
+            android:id="@+id/websiteEditCompany"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <Button
+
+                android:id="@+id/saveChangesCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Save"
+                android:background="@color/primaryDark"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/CancelChangesCompany"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Cancel"
+                android:background="@color/primaryDark"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:id="@+id/chat_item"
+    android:paddingBottom="10dp">
+
+
+    <com.github.abdularis.civ.CircleImageView
+        android:id="@+id/searchUserImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/profileimage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/searchUserID"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"/>
+
+    <TextView
+
+        android:id="@+id/searchUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="right"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toEndOf="@+id/searchUserImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:id="@+id/searchUserID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="8dp"
+        android:gravity="right"
+        android:text="f121111@nu.edu.pk"
+        android:textColor="@color/darkGrey"
+        android:textSize="14dp"
+        app:layout_constraintStart_toEndOf="@+id/searchUserImage"
+        app:layout_constraintTop_toBottomOf="@+id/searchUserName" />
+
+    <Button
+        android:id="@+id/searchMessageBtn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/messageicon"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </Button>
+
+
+
+</android.support.constraint.ConstraintLayout>
+

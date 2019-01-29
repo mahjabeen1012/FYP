@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:elevation="12dp"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
+    android:id="@+id/search_adapter">
+
+
+    <com.github.abdularis.civ.CircleImageView
+        android:id="@+id/searchAdapterImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/profileimage" />
+
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/searchAdapterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGrey"
+        android:layout_gravity="center"
+        android:textSize="15dp"
+        android:text="Student Name"
+        />
+
+
+</LinearLayout>
