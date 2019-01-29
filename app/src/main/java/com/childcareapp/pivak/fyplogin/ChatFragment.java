@@ -78,7 +78,7 @@ public class ChatFragment extends Fragment {
 
 
         loadPreviousChat();
-
+        Toast.makeText(getActivity(), "Testing",Toast.LENGTH_LONG).show();
         msgInputText = view.findViewById(R.id.chat_input_msg);
         Button msgSendButton = view.findViewById(R.id.chat_send_msg);
         msgSendButton.setOnClickListener(new View.OnClickListener() {
