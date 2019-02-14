@@ -47,8 +47,7 @@ import java.net.URL;
 
 import static android.content.ContentValues.TAG;
 
-public class StudentHome extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class StudentHome extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     String uName="";
     ImageView img;
     TextView name,status;
@@ -200,12 +199,22 @@ public class StudentHome extends AppCompatActivity
 
         } else if (id == R.id.jobRecommendation) {
 
+            Bundle bundle2=new Bundle();
+            bundle2.putString("user", uName);
+            bundle2.putString("userStatus", "Student");
+            JobRecommendation jobRecommendation = new JobRecommendation();
+            jobRecommendation.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_student_home, jobRecommendation);
+            fragmentTransaction.commit();
+
         } else if (id == R.id.careerCounseling) {
 
         } else if (id == R.id.cvGenerator) {
             Bundle bundle2 = new Bundle();
             bundle2.putString("user", uName);
             bundle2.putString("status","Student");
+            bundle2.putString("type", "personal");
             CVFragment cvFragment = new CVFragment();
             cvFragment.setArguments(bundle2);
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();

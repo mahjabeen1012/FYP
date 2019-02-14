@@ -136,7 +136,7 @@ public class MyProfileUser extends Fragment implements View.OnClickListener{
                                 } catch (MalformedURLException e1) {
                                     e1.printStackTrace();
                                 }
-                                img=getActivity().findViewById(R.id.studentProfilePhoto);
+                                img=view.findViewById(R.id.studentProfilePhoto);
                                 Picasso.get().load(url.toString()).into(img);
                                 return;
                             }

@@ -1,6 +1,7 @@
 package com.childcareapp.pivak.fyplogin;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -284,6 +285,17 @@ public class MyProfileCompany extends Fragment implements View.OnClickListener{
                 openEditDialog();
                 break;
             case R.id.jobOppertunityHomeCompany:
+
+                Bundle bundle2=new Bundle();
+                bundle2.putString("user", uName);
+                bundle2.putString("userStatus", status);
+                bundle2.putString("userType", "Company");
+                bundle2.putString("profileType", profileType);
+                JobHistoryUser jobHistoryUser = new JobHistoryUser();
+                jobHistoryUser.setArguments(bundle2);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.content_company_home, jobHistoryUser);
+                fragmentTransaction.commit();
                 break;
             case R.id.websiteCompany:
                 if(!websiteLink.getText().toString().equals("")) {

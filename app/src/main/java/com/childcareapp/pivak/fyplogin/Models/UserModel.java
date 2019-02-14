@@ -52,6 +52,12 @@ public class UserModel {
         this.lName=lName;
         this.userId=userID;
     }
+    public UserModel(String image, String fName, String userID)
+    {
+        this.lName=image;
+        this.fName=fName;
+        this.userId=userID;
+    }
     public UserModel(String skills, String softwares){
         this.skills=skills;
         this.softwares=softwares;

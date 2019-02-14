@@ -191,11 +191,20 @@ public class FacultyHome extends AppCompatActivity
         } else if (id == R.id.liveSessions) {
 
         } else if (id == R.id.jobRecommendation) {
+            Bundle bundle2=new Bundle();
+            bundle2.putString("user", uName);
+            bundle2.putString("userStatus", "Student");
+            JobRecommendation jobRecommendation = new JobRecommendation();
+            jobRecommendation.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_faculty_home, jobRecommendation);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.cvGenerator) {
             Bundle bundle2 = new Bundle();
             bundle2.putString("user", uName);
             bundle2.putString("status","Faculty");
+            bundle2.putString("type", "personal");
             CVFragment cvFragment = new CVFragment();
             cvFragment.setArguments(bundle2);
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
@@ -228,11 +237,29 @@ public class FacultyHome extends AppCompatActivity
         }
         else if (id == R.id.liveSessionss)
         {
-
-        }else if (id == R.id.jobOpportunity)
-        {
-
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("status", "Faculty");
+            bundle2.putString("user", uName);
+            bundle2.putString("userType", "Student");
+            CreateSessionsTabs createSessionUser = new CreateSessionsTabs();
+            createSessionUser.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_faculty_home, createSessionUser);
+            fragmentTransaction.commit();
         }
+        else if (id == R.id.jobOpportunity)
+        {
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("status", "Faculty");
+            bundle2.putString("user", uName);
+            bundle2.putString("userType", "Student");
+            PostJobTabs postJobUser = new PostJobTabs();
+            postJobUser.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_faculty_home, postJobUser);
+            fragmentTransaction.commit();
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

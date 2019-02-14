@@ -197,7 +197,8 @@ public class AddSoftwareDialog extends AppCompatDialogFragment {
         String[] previousSoftwares=softwares.split(","); boolean alreadyExist=false;
         for(int a=1;a<previousSoftwares.length; a++)
         {
-            if(sSoftwares.getText().toString().equals(previousSoftwares[a]))
+            String ssfotware=" "+sSoftwares.getText().toString();
+            if(ssfotware.equals(previousSoftwares[a]))
             {
                 alreadyExist=true;
                 return true;
@@ -233,7 +234,7 @@ public class AddSoftwareDialog extends AppCompatDialogFragment {
     {
         mStore=FirebaseFirestore.getInstance();
         Map<String, Object> software = new HashMap<>();
-        software.put("softwares", softwares + "," + sSoftwares.getText().toString());
+        software.put("softwares", softwares + ", " + sSoftwares.getText().toString());
         mStore.collection("Users").document("Student").collection(uName).document("Profile")
                 .update(software).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

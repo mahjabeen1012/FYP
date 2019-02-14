@@ -192,15 +192,51 @@ public class CompanyHome extends AppCompatActivity
             fragmentTransaction.commit();
         } else if (id == R.id.membersCompany)
         {
-            callFragment("search");
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("user", uName);
+            bundle2.putString("status", "Company");
+            MemberSearchTabs membersUser = new MemberSearchTabs();
+            membersUser.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_company_home, membersUser);
+            fragmentTransaction.commit();
 
-        } else if (id == R.id.postJob) {
+        } else if (id == R.id.postJobCompany) {
 
-        } else if (id == R.id.helpPortal) {
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("user", uName);
+            bundle2.putString("status", "Company");
+            bundle2.putString("userType", "Company");
+            PostJobTabs postJobUser = new PostJobTabs();
+            postJobUser.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_company_home, postJobUser);
+            fragmentTransaction.commit();
+        }
+        else if (id == R.id.liveSessionsCompany) {
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("user", uName);
+            bundle2.putString("status", "Company");
+            bundle2.putString("userType", "Company");
+            CreateSessionsTabs createSessionUser = new CreateSessionsTabs();
+            createSessionUser.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_company_home, createSessionUser);
+            fragmentTransaction.commit();
+
+        } else if (id == R.id.helpPortalCompany) {
 
         }
         else if (id == R.id.messages) {
-           callFragment("message");
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("status", "Company");
+            bundle2.putString("user", uName);
+            bundle2.putString("userType", "Company");
+            AllContacts chatFragment = new AllContacts();
+            chatFragment.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_company_home, chatFragment);
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -1,4 +1,4 @@
-package com.childcareapp.pivak.fyplogin;
+package com.childcareapp.pivak.fyplogin.ListviewAdapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,6 +14,7 @@ import com.childcareapp.pivak.fyplogin.Models.CommentUsersList;
 import com.childcareapp.pivak.fyplogin.Models.Images;
 import com.childcareapp.pivak.fyplogin.Models.LikeUsersList;
 import com.childcareapp.pivak.fyplogin.Models.UserModel;
+import com.childcareapp.pivak.fyplogin.R;
 import com.github.abdularis.civ.CircleImageView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;

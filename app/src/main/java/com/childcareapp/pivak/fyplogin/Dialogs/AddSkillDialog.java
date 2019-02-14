@@ -185,7 +185,8 @@ public class AddSkillDialog extends AppCompatDialogFragment {
         boolean alreadyExist=false;
         for(int a=1;a<previousSkills.length; a++)
         {
-            if(sSkills.getText().toString().equals(previousSkills[a]))
+            String sskill=" "+ sSkills.getText().toString();
+            if(sskill.equals(previousSkills[a]))
             {
                 alreadyExist=true;
                 return true;
@@ -219,7 +220,7 @@ public class AddSkillDialog extends AppCompatDialogFragment {
     public void storeDataToFireStore()
     {
         Map<String, Object> skill = new HashMap<>();
-        skill.put("skills", skills + "," + sSkills.getText().toString());
+        skill.put("skills", skills + ", " + sSkills.getText().toString());
         mStore=FirebaseFirestore.getInstance();
         mStore.collection("Users").document("Student").collection(uName).document("Profile")
                 .update(skill).addOnSuccessListener(new OnSuccessListener<Void>() {

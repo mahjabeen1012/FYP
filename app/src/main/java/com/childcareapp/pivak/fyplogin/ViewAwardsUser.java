@@ -152,7 +152,8 @@ public class ViewAwardsUser extends Fragment implements View.OnClickListener{
                         if (documentSnapshot.exists())
                         {
                             final String idd=documentSnapshot.getId();
-                            DocumentReference docRef = mStore.collection("Users").document("Student").collection(uName).document("Profile").collection("Awards").document(idd);
+                            DocumentReference docRef = mStore.collection("Users").document("Student").collection(uName)
+                                    .document("Profile").collection("Awards").document(idd);
                             docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {

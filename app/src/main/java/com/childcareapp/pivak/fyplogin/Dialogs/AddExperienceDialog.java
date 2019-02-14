@@ -532,7 +532,9 @@ public class AddExperienceDialog extends AppCompatDialogFragment {
             data.put("sDate",to.getText().toString());
             data.put("eDate",eDate);
             data.put("description",description.getText().toString());
-            mStore.collection("Users").document("Student").collection(uName).document("Profile").collection("Experience").document(getArguments().getString("experienceId")).update(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+            mStore.collection("Users").document("Student").collection(uName).document("Profile")
+                    .collection("Experience").document(getArguments().getString("experienceId")).update(data)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     loadPreviousFragment();

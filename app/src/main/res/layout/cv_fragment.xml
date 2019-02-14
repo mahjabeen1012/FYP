@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="5dp"
     android:id="@+id/layout"
+    android:padding="5dp"
+
     tools:context=".MainActivity"
     android:background="@color/white">
 
@@ -15,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
+        android:id="@+id/cvLayout"
         android:background="@drawable/custom_box_cv">
 
 

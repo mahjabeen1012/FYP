@@ -397,9 +397,9 @@ public class MainActivity extends AppCompatActivity {
         pass.setEnabled(true);
         rememberMe.setEnabled(true);
     }
-    public void hideSoftKeyboard(){
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-    }
+//    public void hideSoftKeyboard(){
+//        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+//    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void showDialog(String title, String message)

@@ -26,6 +26,12 @@
                     android:title="Job Recommendation" />
 
                 <item
+                    android:id="@+id/careerCounselingStudent"
+                    android:icon="@drawable/careercouncelling"
+                    android:title="Career Counceling" />
+
+
+                <item
                     android:id="@+id/cvGenerator"
                     android:icon="@drawable/cv"
                     android:title="CV Generator" />
@@ -54,19 +60,6 @@
         </menu>
     </item>
 
-    <item android:title="Create">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/liveSessionss"
-                    android:icon="@drawable/ic_menu_slideshow"
-                    android:title="Live Session" />
-                <item
-                    android:id="@+id/jobOpportunity"
-                    android:icon="@drawable/job"
-                    android:title="Job Opportunity" />
-            </group>
-        </menu>
-    </item>
+
 
 </menu>

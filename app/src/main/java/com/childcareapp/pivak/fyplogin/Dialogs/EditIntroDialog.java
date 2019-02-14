@@ -469,7 +469,8 @@ public class EditIntroDialog extends AppCompatDialogFragment {
             data.put("currentPosition", "");
         }
         mStore=FirebaseFirestore.getInstance();
-        mStore.collection("Users").document("Student").collection(uName).document("Profile").update(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+        mStore.collection("Users").document("Student").collection(uName).document("Profile")
+                .update(data).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
             }

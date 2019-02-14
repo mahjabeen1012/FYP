@@ -21,8 +21,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.childcareapp.pivak.fyplogin.HomeActivity;
-import com.childcareapp.pivak.fyplogin.ModelNewsFeed;
+import com.childcareapp.pivak.fyplogin.Models.ModelNewsFeed;
 import com.childcareapp.pivak.fyplogin.Models.Images;
 import com.childcareapp.pivak.fyplogin.R;
 import com.github.abdularis.civ.CircleImageView;
@@ -46,7 +45,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import static android.content.ContentValues.TAG;
 

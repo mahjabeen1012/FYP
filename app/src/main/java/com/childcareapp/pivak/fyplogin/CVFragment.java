@@ -2,6 +2,7 @@ package com.childcareapp.pivak.fyplogin;
 
 import android.app.Fragment;
 
+import android.app.FragmentTransaction;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -14,12 +15,14 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -87,8 +90,9 @@ public class CVFragment extends Fragment {
     int totalSkills=0;
     int totalSoftwares=0;
     int totalAwards=0;
+    int totalUsers=1;
     CVData data;
-    String uName,status;
+    //String uName,status;
     View view;
     ListAdapter listAdapterrrrr;
 
@@ -98,17 +102,26 @@ public class CVFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.cv_fragment, container, false);
 
-        uName=getArguments().getString("user");
-        status=getArguments().getString("status");
+        //status=getArguments().getString("status");
         listviewEducation = view.findViewById(R.id.listview_education_cv);
         listviewExperience = view.findViewById(R.id.listview_experience_cv);
         girdviewSoftwares = view.findViewById(R.id.gridview_softwares_cv);
         gridviewSkills = view.findViewById(R.id.gridview_skills_cv);
         listviewProjects = view.findViewById(R.id.listview_projects_cv);
         listviewAward = view.findViewById(R.id.listview_awards_cv);
+        if(getArguments().getString("type").equals("personal"))
+        {
+            setListviews(getArguments().getString("user"));
+        }
+        else if(getArguments().getString("type").equals("job"))
+        {
+            ScrollView cvLayout=view.findViewById(R.id.layout);
+            cvLayout.setVisibility(View.INVISIBLE);
+            String[] userIDs=getArguments().getString("userIDs").split(",");
+            if(totalUsers<userIDs.length)
+            setListviews(userIDs[totalUsers]);
+        }
 
-        setListviews();
-        loadCV();
 //        final Handler handler = new Handler();
 //        handler.postDelayed(new Runnable() {
 //            @Override
@@ -129,11 +142,11 @@ public class CVFragment extends Fragment {
     }
 
 
-    public void setListviews()
+    public void setListviews(String id)
     {
-        loadImage();
+        loadImage(id);
     }
-    public void populateEducationListView(String degree, String inst,String duration,String location)
+    public void populateEducationListView(String degree, String inst,String duration,String location, String id)
     {
         data = new CVData(inst+", "+location, degree, duration);
         educationList.add(data);
@@ -156,13 +169,15 @@ public class CVFragment extends Fragment {
         }
         if(listEducation.getCount()==totalEcucationObjs)
         {
-            setExperienceData();
+            setExperienceData(id);
         }
     }
 
-    public  void setEducationData()
+    public  void setEducationData(final String id)
     {
-        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(uName)
+        totalEcucationObjs=0;
+        listviewEducation.setAdapter(null);
+        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(id)
                 .document("Profile").collection("Education").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots,
@@ -174,6 +189,7 @@ public class CVFragment extends Fragment {
 
                 if (queryDocumentSnapshots != null) {
                     educationList = new ArrayList<>();
+                    educationList.clear();
                     totalEcucationObjs=queryDocumentSnapshots.size();
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
 
@@ -191,7 +207,7 @@ public class CVFragment extends Fragment {
                         }
                         populateEducationListView(userEducation.getDegree(), userEducation.getInstitution(),
                                 sYear[2]+" to "+endDate,
-                                userEducation.getCity()+","+userEducation.getCountry());
+                                userEducation.getCity()+","+userEducation.getCountry(), id);
                     }
                 }
                 else
@@ -201,7 +217,7 @@ public class CVFragment extends Fragment {
             }});
     }
 
-    public void populateExperienceListview(String designation, String organization,String duration,String location, String description)
+    public void populateExperienceListview(String designation, String organization,String duration,String location, String description, String id)
     {
         data = new CVData(duration, designation, organization+", "+location, description);
         experienceList.add(data);
@@ -224,13 +240,15 @@ public class CVFragment extends Fragment {
         }
         if(listExperience.getCount()==totalExperienceObjs)
         {
-            setAwardsData();
+            setAwardsData(id);
         }
     }
-    public void setExperienceData()
+    public void setExperienceData(final String id)
     {
+        totalExperienceObjs=0;
         cvExperiments=view.findViewById(R.id.cvExperienceLabel);
-        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(uName)
+        listviewExperience.setAdapter(null);
+        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(id)
                 .document("Profile").collection("Experience").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots,
@@ -244,6 +262,7 @@ public class CVFragment extends Fragment {
                     cvExperiments.setVisibility(View.VISIBLE);
                     totalExperienceObjs=queryDocumentSnapshots.size();
                     experienceList = new ArrayList<>();
+                    experienceList.clear();
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
 
                         UserExperience studentExperience=doc.toObject(UserExperience.class);
@@ -251,7 +270,7 @@ public class CVFragment extends Fragment {
                         populateExperienceListview(studentExperience.getDesignation(), studentExperience.getOrganization(),
                                 studentExperience.getsDate()+" to "+ studentExperience.geteDate(),
                                 studentExperience.getCity()+","+studentExperience.getCountry(),
-                                studentExperience.getDescription());
+                                studentExperience.getDescription(), id);
                     }
                 }
                 else
@@ -261,10 +280,11 @@ public class CVFragment extends Fragment {
             }});
     }
 
-    public  void populateSoftwaresGridview(String softwares, String skills)
+    public  void populateSoftwaresGridview(String softwares, String skills, String id)
     {
 
         softwaresList = new ArrayList<>();
+        softwaresList.clear();
         String[] software=softwares.split(",");
         totalSoftwares=0;
         for(int a=1; a<software.length; a++)
@@ -295,17 +315,18 @@ public class CVFragment extends Fragment {
         {
             if(skills.equals("")) {
                 cvSkills.setVisibility(View.INVISIBLE);
-                setEducationData();
+                setEducationData(id);
             }
             else {
                 cvSkills.setVisibility(View.VISIBLE);
-                populateSkillsGridview(skills);
+                populateSkillsGridview(skills, id);
             }
         }
     }
-    public void populateSkillsGridview(String skills)
+    public void populateSkillsGridview(String skills, String id)
     {
         skillsList = new ArrayList<>();
+        skillsList.clear();
         String[] skill=skills.split(",");
         totalSkills=0;
         for(int a=1; a<skill.length; a++)
@@ -333,10 +354,10 @@ public class CVFragment extends Fragment {
         }
         if(gridviewSkills.getCount()==totalSkills)
         {
-            setEducationData();
+            setEducationData(id);
         }
     }
-    public void setBasicInfoSoftwaresAndSkills()
+    public void setBasicInfoSoftwaresAndSkills(final String id)
     {
         cvAdress=view.findViewById(R.id.cvAddress);
         cvName=view.findViewById(R.id.cvName);
@@ -347,7 +368,7 @@ public class CVFragment extends Fragment {
         cvSkills=view.findViewById(R.id.cvSkillsLabel);
         aboutmeLabel=view.findViewById(R.id.aboutMeLabel);
 
-        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(uName)
+        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(id)
                 .document("Profile").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -381,7 +402,7 @@ public class CVFragment extends Fragment {
                         }
                         else {
                             cvSoftwares.setVisibility(View.VISIBLE);
-                            populateSoftwaresGridview(userData.getSoftwares(), userData.getSkills());
+                            populateSoftwaresGridview(userData.getSoftwares(), userData.getSkills(), id);
                         }
 //                        if(userData.getSkills().equals(""))
 //                        {
@@ -403,7 +424,7 @@ public class CVFragment extends Fragment {
         });
     }
 
-    public void populateProjectsListview(String title, String description)
+    public void populateProjectsListview(String title, String description, String id)
     {
         data = new CVData(title,  description);
         projectsList.add(data);
@@ -424,12 +445,17 @@ public class CVFragment extends Fragment {
             listviewProjects.setLayoutParams(params);
             listviewProjects.requestLayout();
         }
+        if(listProject.getCount()==totalProjects)
+        {
+           loadCV();
+        }
     }
-    public void setProjectsData()
+    public void setProjectsData(final String id)
     {
+        totalProjects=0;
         cvProjects=view.findViewById(R.id.cvProjectsLabel);
         listviewProjects.setAdapter(null);
-        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(uName)
+        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(id)
                 .document("Profile").collection("Projects").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots,
@@ -443,9 +469,10 @@ public class CVFragment extends Fragment {
                     cvProjects.setVisibility(View.VISIBLE);
                     totalProjects=queryDocumentSnapshots.size();
                     projectsList = new ArrayList<>();
+                    projectsList.clear();
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
                         UserProjects projects=doc.toObject(UserProjects.class);
-                        populateProjectsListview(projects.getTitle(), projects.getDescription());
+                        populateProjectsListview(projects.getTitle(), projects.getDescription(), id);
                     }
                 }
                 else
@@ -454,7 +481,7 @@ public class CVFragment extends Fragment {
                 }
             }});
     }
-    public void populateAwardsListview(String title, String year, String description)
+    public void populateAwardsListview(String title, String year, String description, String id)
     {
         data = new CVData(year, title, description,  1);
         awardList.add(data);
@@ -477,14 +504,15 @@ public class CVFragment extends Fragment {
         }
         if(listAward.getCount()==totalAwards)
         {
-            setProjectsData();
+            setProjectsData(id);
         }
     }
-    public void setAwardsData()
+    public void setAwardsData(final String id)
     {
+        totalAwards=0;
         cvAwards=view.findViewById(R.id.cvAwardsLabel);
         listviewAward.setAdapter(null);
-        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(uName)
+        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(id)
                 .document("Profile").collection("Awards").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots,
@@ -496,11 +524,12 @@ public class CVFragment extends Fragment {
 
                 if (queryDocumentSnapshots != null) {
                     awardList = new ArrayList<>();
+                    awardList.clear();
                     totalAwards=queryDocumentSnapshots.size();
                     cvAwards.setVisibility(View.VISIBLE);
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
                         UserAwards awards=doc.toObject(UserAwards.class);
-                        populateAwardsListview(awards.getTitle(), awards.getYear(),awards.getDescription());
+                        populateAwardsListview(awards.getTitle(), awards.getYear(),awards.getDescription(), id);
                     }
                 }
                 else
@@ -510,9 +539,9 @@ public class CVFragment extends Fragment {
             }});
     }
 
-    public void loadImage()
+    public void loadImage(final String id)
     {
-        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(uName)
+        FirebaseFirestore.getInstance().collection("Users").document("Student").collection(id)
                 .document("Profile").collection("Image").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
@@ -531,7 +560,7 @@ public class CVFragment extends Fragment {
                             ///////////// Nested query to get Image
                             cvImage=view.findViewById(R.id.cvImage);
                             DocumentReference imgRef = FirebaseFirestore.getInstance().collection("Users")
-                                    .document(status).collection(uName).document("Profile")
+                                    .document("Student").collection(id).document("Profile")
                                     .collection("Image").document(idd);
                             imgRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override
@@ -552,7 +581,7 @@ public class CVFragment extends Fragment {
                                                 e.printStackTrace();
                                             }
                                             Picasso.get().load(url.toString()).into(cvImage);
-                                            setBasicInfoSoftwaresAndSkills();
+                                            setBasicInfoSoftwaresAndSkills(id);
                                         }
                                         else
                                         {
@@ -635,19 +664,34 @@ public class CVFragment extends Fragment {
        {
            root.mkdir();
        }
-       File file = new File(root, "myCV.pdf");
+       int nameCount = 1;
+       String fname = "Resume - " + cvName.getText().toString()+".pdf";
+       //  File file = getActivity().getBaseContext().getFileStreamPath(fname);
+       File file = new File(root, fname);
+       while (file.exists())
+       {
+           fname = "Resume - " + cvName.getText().toString()+"("+nameCount+")"+".pdf";
+           nameCount++;
+           file = new File(root, fname);
+       }
+
+       File filee = new File(root, fname);
        try
        {
-           FileOutputStream fileOutputStream = new FileOutputStream(file);
+           FileOutputStream fileOutputStream = new FileOutputStream(filee);
            pdfDocument.writeTo(fileOutputStream);
            showSuccess();
-
        } catch (IOException e)
        {
            e.printStackTrace();
            showFaliure();
        }
        pdfDocument.close();
+       String[] userIDs=getArguments().getString("userIDs").split(",");
+       totalUsers++;
+       if(totalUsers<userIDs.length) {
+           setListviews(userIDs[totalUsers]);
+       }
    }
 
     public void showProgress()

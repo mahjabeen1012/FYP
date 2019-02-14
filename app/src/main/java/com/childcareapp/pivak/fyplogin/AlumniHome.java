@@ -107,7 +107,7 @@ public class AlumniHome extends AppCompatActivity
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.content_alumni_home, myProfileUser);
         fragmentTransaction.commit();
-        Button notificationButton = findViewById(R.id.notification_button_student);
+        Button notificationButton = findViewById(R.id.notification_button_alumni);
         notificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -202,6 +202,7 @@ public class AlumniHome extends AppCompatActivity
             Bundle bundle2 = new Bundle();
             bundle2.putString("user", uName);
             bundle2.putString("status","Alumni");
+            bundle2.putString("type", "personal");
             CVFragment cvFragment = new CVFragment();
             cvFragment.setArguments(bundle2);
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
@@ -210,6 +211,14 @@ public class AlumniHome extends AppCompatActivity
         } else if (id == R.id.liveSessions) {
 
         } else if (id == R.id.jobRecommendation) {
+            Bundle bundle2=new Bundle();
+            bundle2.putString("user", uName);
+            bundle2.putString("userStatus", "Student");
+            JobRecommendation jobRecommendation = new JobRecommendation();
+            jobRecommendation.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_alumni_home, jobRecommendation);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.careerCounseling) {
 
@@ -242,10 +251,27 @@ public class AlumniHome extends AppCompatActivity
         }
         else if (id == R.id.liveSessionss)
         {
-
-        }else if (id == R.id.jobOpportunity)
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("status", "Alumni");
+            bundle2.putString("user", uName);
+            bundle2.putString("userType", "Student");
+            CreateSessionsTabs createSessionUser = new CreateSessionsTabs();
+            createSessionUser.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_alumni_home, createSessionUser);
+            fragmentTransaction.commit();
+        }
+        else if (id == R.id.jobOpportunity)
         {
-
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("status", "Alumni");
+            bundle2.putString("user", uName);
+            bundle2.putString("userType", "Student");
+            PostJobTabs postJobUser = new PostJobTabs();
+            postJobUser.setArguments(bundle2);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_alumni_home, postJobUser);
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

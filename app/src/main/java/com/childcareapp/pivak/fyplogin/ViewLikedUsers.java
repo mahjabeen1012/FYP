@@ -2,39 +2,28 @@ package com.childcareapp.pivak.fyplogin;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialogFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import com.childcareapp.pivak.fyplogin.ListviewAdapters.ListViewAward;
+import com.childcareapp.pivak.fyplogin.ListviewAdapters.ListViewLike;
 import com.childcareapp.pivak.fyplogin.Models.LikeUsersList;
-import com.childcareapp.pivak.fyplogin.Models.UserAwards;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.lmntrx.android.library.livin.missme.ProgressDialog;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.content.ContentValues.TAG;
 
 public class ViewLikedUsers extends AppCompatDialogFragment {
 

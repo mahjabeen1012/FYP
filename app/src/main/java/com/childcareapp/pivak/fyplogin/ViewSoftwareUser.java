@@ -193,7 +193,7 @@ public class ViewSoftwareUser extends Fragment implements View.OnClickListener{
                                         {
                                             if(!softwareObjs.get(a).equals(skillTitle.getText().toString()))
                                             {
-                                                softwares[0]=softwares[0]+","+softwareObjs.get(a);
+                                                softwares[0]=softwares[0]+", "+softwareObjs.get(a);
                                             }
                                         }
                                         Map<String, Object> data = new HashMap<>();

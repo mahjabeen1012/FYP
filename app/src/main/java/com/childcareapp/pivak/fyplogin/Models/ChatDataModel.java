@@ -15,6 +15,7 @@ public class ChatDataModel {
     String readStatus;
     @ServerTimestamp
     Date timestamp;
+
     ChatDataModel()
     {
     }

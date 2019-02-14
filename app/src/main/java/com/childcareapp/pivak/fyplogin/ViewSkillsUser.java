@@ -176,11 +176,11 @@ public class ViewSkillsUser extends Fragment implements View.OnClickListener{
                                         {
                                             if(!skillsObjs.get(a).equals(skillTitle.getText().toString()))
                                             {
-                                                skills[0]=skills[0]+","+skillsObjs.get(a);
+                                                skills[0]=skills[0]+", "+skillsObjs.get(a);
                                             }
                                         }
                                         Map<String, Object> data = new HashMap<>();
-                                        data.put("skills",skills[0]);
+                                        data.put("skills", skills[0]);
                                         FirebaseFirestore.getInstance().collection("Users").document("Student")
                                                 .collection(uName).document("Profile").update(data)
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {

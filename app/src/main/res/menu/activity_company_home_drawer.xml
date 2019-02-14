@@ -17,12 +17,19 @@
                     android:title="Members" />
 
                 <item
-                    android:id="@+id/postJob"
+                    android:id="@+id/postJobCompany"
                     android:icon="@drawable/job"
                     android:title="Post Job" />
 
+
+
                 <item
-                    android:id="@+id/helpPortal"
+                    android:id="@+id/liveSessionsCompany"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="Live Session" />
+
+                <item
+                    android:id="@+id/helpPortalCompany"
                     android:icon="@drawable/helpportal"
                     android:title="Help Portal" />
             </group>

@@ -25,6 +25,25 @@
         <item>2015</item>
     </string-array>
 
+
+    <string-array name="EmployeeType">
+
+        <item></item>
+        <item>Full-Time</item>
+        <item>Part-Time</item>
+        <item>Contract</item>
+        <item>Temporary</item>
+        <item>Volunteer</item>
+        <item>Internship</item>
+    </string-array>
+
+    <string-array name="SessionType">
+
+        <item></item>
+        <item>Public</item>
+        <item>Private</item>
+    </string-array>
+
     <string-array name="Degree">
         <item></item>
         <item>BS</item>

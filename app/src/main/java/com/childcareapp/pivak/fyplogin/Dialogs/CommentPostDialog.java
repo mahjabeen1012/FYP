@@ -1,4 +1,4 @@
-package com.childcareapp.pivak.fyplogin;
+package com.childcareapp.pivak.fyplogin.Dialogs;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import com.childcareapp.pivak.fyplogin.Models.CommentUsersList;
 import com.childcareapp.pivak.fyplogin.Models.Images;
 import com.childcareapp.pivak.fyplogin.Models.LikeUsersList;
 import com.childcareapp.pivak.fyplogin.Models.NotificationsList;
+import com.childcareapp.pivak.fyplogin.R;
 import com.childcareapp.pivak.fyplogin.RecyclerviewAdapters.CommentRecyclerView;
 import com.github.abdularis.civ.CircleImageView;
 import com.google.android.gms.tasks.OnCompleteListener;
