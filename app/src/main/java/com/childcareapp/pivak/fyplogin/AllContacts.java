@@ -349,8 +349,17 @@ public class AllContacts extends Fragment {
                 while (timestamps.size()!= totalUsers || userIDs.size()!=totalUsers || usernames.size()!=totalUsers ||
                         lastMessage.size()!=totalUsers || readStatus.size()!=totalUsers || images.size()!=totalUsers) { // your conditions
                 }
-                progressBar.setVisibility(View.INVISIBLE);
-                sortAndDisplayChatRooms(); // your task to execute
+                Handler handler = new Handler(Looper.getMainLooper()) {
+                    @Override
+                    public void handleMessage(Message msg) {
+                        // Any UI task
+                        progressBar.setVisibility(View.GONE);
+                        sortAndDisplayChatRooms();
+                    }
+                };
+                handler.sendEmptyMessage(1);
+
+                 // your task to execute
             }
         };
         new Thread(runnable).start();

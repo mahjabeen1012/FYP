@@ -7,6 +7,7 @@ import java.util.Date;
 public class NotificationsList
 {
     String id,notification,postId,status,uploaderId;
+
     @ServerTimestamp Date timeStamp;
     long timeInMillis;
     String url;

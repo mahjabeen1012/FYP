@@ -129,33 +129,51 @@ public class Notifications extends Fragment {
                 View cView=mLikeUsersListView.getChildAt(position);
                 final TextView posId = cView.findViewById(R.id.postid);
                 TextView uploaderid = cView.findViewById(R.id.uploaderid);
-
-
-                Bundle bundle = new Bundle();
-                bundle.putString("uploaderId", uploaderid.getText().toString());
-                bundle.putString("postId",posId.getText().toString());
-                bundle.putString("uName",uName);
-                ViewNotification viewNotification = new ViewNotification();
-                viewNotification.setArguments(bundle);
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                if(userType.equals("Student"))
+                String status="";
+                if(status.equals("job"))
                 {
-                    fragmentTransaction.replace(R.id.content_student_home, viewNotification);
+                    Bundle bundle2=new Bundle();
+                    bundle2.putString("user", uName);
+                    bundle2.putString("userStatus", "Student");
+                    JobRecommendation jobRecommendation = new JobRecommendation();
+                    jobRecommendation.setArguments(bundle2);
+                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    if (userType.equals("Student")) {
+                        fragmentTransaction.replace(R.id.content_student_home, jobRecommendation);
+                    }
+                    if (userType.equals("Alumni")) {
+                        fragmentTransaction.replace(R.id.content_alumni_home, jobRecommendation);
+                    }
+                    if (userType.equals("Company")) {
+                        fragmentTransaction.replace(R.id.content_company_home, jobRecommendation);
+                    }
+                    if (userType.equals("Faculty")) {
+                        fragmentTransaction.replace(R.id.content_faculty_home, jobRecommendation);
+                    }
+                    fragmentTransaction.commit();
                 }
-                if(userType.equals("Alumni"))
-                {
-                    fragmentTransaction.replace(R.id.content_alumni_home, viewNotification);
+                else {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("uploaderId", uploaderid.getText().toString());
+                    bundle.putString("postId", posId.getText().toString());
+                    bundle.putString("uName", uName);
+                    ViewNotification viewNotification = new ViewNotification();
+                    viewNotification.setArguments(bundle);
+                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    if (userType.equals("Student")) {
+                        fragmentTransaction.replace(R.id.content_student_home, viewNotification);
+                    }
+                    if (userType.equals("Alumni")) {
+                        fragmentTransaction.replace(R.id.content_alumni_home, viewNotification);
+                    }
+                    if (userType.equals("Company")) {
+                        fragmentTransaction.replace(R.id.content_company_home, viewNotification);
+                    }
+                    if (userType.equals("Faculty")) {
+                        fragmentTransaction.replace(R.id.content_faculty_home, viewNotification);
+                    }
+                    fragmentTransaction.commit();
                 }
-                if(userType.equals("Company"))
-                {
-                    fragmentTransaction.replace(R.id.content_company_home, viewNotification);
-                }
-                if(userType.equals("Faculty"))
-                {
-                    fragmentTransaction.replace(R.id.content_faculty_home, viewNotification);
-                }
-
-                fragmentTransaction.commit();
 
             }
         });

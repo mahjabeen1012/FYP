@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -95,7 +96,6 @@ public class CVFragment extends Fragment {
     //String uName,status;
     View view;
     ListAdapter listAdapterrrrr;
-
     ScrollView linearLayout;
     @Nullable
     @Override
@@ -212,6 +212,7 @@ public class CVFragment extends Fragment {
                 }
                 else
                 {
+                    setExperienceData(id);
                     Log.i(TAG, "onEvent: Empty List");
                 }
             }});
@@ -259,22 +260,29 @@ public class CVFragment extends Fragment {
                 }
 
                 if (queryDocumentSnapshots != null) {
-                    cvExperiments.setVisibility(View.VISIBLE);
-                    totalExperienceObjs=queryDocumentSnapshots.size();
-                    experienceList = new ArrayList<>();
-                    experienceList.clear();
-                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                    if(queryDocumentSnapshots.size()<1) {
+                        cvExperiments.setVisibility(View.GONE);
+                        setAwardsData(id);
+                    }
+                    else {
+                        cvExperiments.setVisibility(View.VISIBLE);
+                        totalExperienceObjs = queryDocumentSnapshots.size();
+                        experienceList = new ArrayList<>();
+                        experienceList.clear();
+                        for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
 
-                        UserExperience studentExperience=doc.toObject(UserExperience.class);
+                            UserExperience studentExperience = doc.toObject(UserExperience.class);
 
-                        populateExperienceListview(studentExperience.getDesignation(), studentExperience.getOrganization(),
-                                studentExperience.getsDate()+" to "+ studentExperience.geteDate(),
-                                studentExperience.getCity()+","+studentExperience.getCountry(),
-                                studentExperience.getDescription(), id);
+                            populateExperienceListview(studentExperience.getDesignation(), studentExperience.getOrganization(),
+                                    studentExperience.getsDate() + " to " + studentExperience.geteDate(),
+                                    studentExperience.getCity() + "," + studentExperience.getCountry(),
+                                    studentExperience.getDescription(), id);
+                        }
                     }
                 }
                 else
                 {
+                    setAwardsData(id);
                     Log.i(TAG, "onEvent: Empty List");
                 }
             }});
@@ -399,6 +407,14 @@ public class CVFragment extends Fragment {
                         if(userData.getSoftwares().equals(""))
                         {
                             cvSoftwares.setVisibility(View.INVISIBLE);
+                            if(userData.getSkills().equals("")) {
+                                cvSkills.setVisibility(View.INVISIBLE);
+                                setEducationData(id);
+                            }
+                            else {
+                                cvSkills.setVisibility(View.VISIBLE);
+                                populateSkillsGridview(userData.getSkills(), id);
+                            }
                         }
                         else {
                             cvSoftwares.setVisibility(View.VISIBLE);
@@ -466,17 +482,26 @@ public class CVFragment extends Fragment {
                 }
 
                 if (queryDocumentSnapshots != null) {
-                    cvProjects.setVisibility(View.VISIBLE);
-                    totalProjects=queryDocumentSnapshots.size();
-                    projectsList = new ArrayList<>();
-                    projectsList.clear();
-                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        UserProjects projects=doc.toObject(UserProjects.class);
-                        populateProjectsListview(projects.getTitle(), projects.getDescription(), id);
+                    if(queryDocumentSnapshots.size()<1)
+                    {
+                        cvProjects.setVisibility(View.GONE);
+                        loadCV();
+                    }
+                    else {
+                        cvProjects.setVisibility(View.VISIBLE);
+                        totalProjects = queryDocumentSnapshots.size();
+                        projectsList = new ArrayList<>();
+                        projectsList.clear();
+                        for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                            UserProjects projects = doc.toObject(UserProjects.class);
+                            populateProjectsListview(projects.getTitle(), projects.getDescription(), id);
+                        }
                     }
                 }
                 else
                 {
+                    cvProjects.setVisibility(View.GONE);
+                    loadCV();
                     Log.i(TAG, "onEvent: Empty List");
                 }
             }});
@@ -523,17 +548,27 @@ public class CVFragment extends Fragment {
                 }
 
                 if (queryDocumentSnapshots != null) {
-                    awardList = new ArrayList<>();
-                    awardList.clear();
-                    totalAwards=queryDocumentSnapshots.size();
-                    cvAwards.setVisibility(View.VISIBLE);
-                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        UserAwards awards=doc.toObject(UserAwards.class);
-                        populateAwardsListview(awards.getTitle(), awards.getYear(),awards.getDescription(), id);
+                    if(queryDocumentSnapshots.size()<1)
+                    {
+                        cvAwards.setVisibility(View.GONE);
+                        setProjectsData(id);
+                    }
+                    else {
+                        awardList = new ArrayList<>();
+                        awardList.clear();
+                        totalAwards = queryDocumentSnapshots.size();
+                        cvAwards.setVisibility(View.VISIBLE);
+                        for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                            UserAwards awards = doc.toObject(UserAwards.class);
+                            populateAwardsListview(awards.getTitle(), awards.getYear(), awards.getDescription(), id);
+                        }
                     }
                 }
                 else
                 {
+                    //Toast.makeText(getActivity(), "Else", Toast.LENGTH_SHORT).show();
+                    cvAwards.setVisibility(View.GONE);
+                    setProjectsData(id);
                     Log.i(TAG, "onEvent: Empty List");
                 }
             }});
@@ -680,17 +715,23 @@ public class CVFragment extends Fragment {
        {
            FileOutputStream fileOutputStream = new FileOutputStream(filee);
            pdfDocument.writeTo(fileOutputStream);
-           showSuccess();
+           if(!getArguments().getString("type").equals("job")) {
+               showSuccess();
+           }
        } catch (IOException e)
        {
            e.printStackTrace();
            showFaliure();
        }
        pdfDocument.close();
-       String[] userIDs=getArguments().getString("userIDs").split(",");
-       totalUsers++;
-       if(totalUsers<userIDs.length) {
-           setListviews(userIDs[totalUsers]);
+       if(getArguments().getString("type").equals("job")) {
+           String[] userIDs = getArguments().getString("userIDs").split(",");
+           totalUsers++;
+           if (totalUsers < userIDs.length) {
+               setListviews(userIDs[totalUsers]);
+           } else {
+               showSuccess();
+           }
        }
    }
 
@@ -745,6 +786,7 @@ public class CVFragment extends Fragment {
 
     public void loadCV()
     {
+
         Runnable runnable = new Runnable() {
             @Override
             public void run() {

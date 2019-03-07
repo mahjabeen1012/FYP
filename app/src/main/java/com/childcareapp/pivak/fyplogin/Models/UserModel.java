@@ -20,29 +20,35 @@ public class UserModel {
     String batch;
     String discipline;
     String campus;
+    String areaOfInterest;
     URL image;
 
     public UserModel() { }
     public UserModel( String fName, String lName, String country,String city, String zipCode, String contact,String email, String status,
                     String skills, String softwares,String headline, String currentPosition,String degree, String batch,
-                    String discipline,String campus)
+                    String discipline,String campus, String areaOfInterest)
     {
         this.fName=fName;
         this.lName=lName;
+        this.headline=headline;
+
         this.country=country;
         this.city=city;
-        this.zipCode=zipCode;
-        this.contact=contact;
         this.email=email;
-        this.status=status;
-        this.skills=skills;
         this.softwares=softwares;
-        this.headline=headline;
-        this.currentPosition=currentPosition;
+        this.skills=skills;
+        this.areaOfInterest=areaOfInterest;
+
+        this.status=status;
+
         this.degree=degree;
         this.discipline=discipline;
         this.batch=batch;
         this.campus=campus;
+
+        this.currentPosition=currentPosition;
+        this.zipCode=zipCode;
+        this.contact=contact;
     }
 
     public UserModel(URL image, String fName, String lName, String userID)
@@ -61,6 +67,10 @@ public class UserModel {
     public UserModel(String skills, String softwares){
         this.skills=skills;
         this.softwares=softwares;
+    }
+
+    public String getAreaOfInterest() {
+        return areaOfInterest;
     }
 
     public URL getImage() {

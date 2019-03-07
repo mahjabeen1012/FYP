@@ -100,7 +100,6 @@ public class ChatFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getArguments().getString("name"));
-
     }
 
     public void loadPreviousChat()
@@ -135,7 +134,6 @@ public class ChatFragment extends Fragment {
                         if(queryDocumentSnapshots != null){
                             msgDtoList.clear();
                             for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-
                                 ChatDataModel data=doc.toObject(ChatDataModel.class);
                                 if(data.getStatus().equals("received") && data.getReadStatus().equals("unread"))
                                 {

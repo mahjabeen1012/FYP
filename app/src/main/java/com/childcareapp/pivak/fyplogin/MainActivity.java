@@ -1,12 +1,15 @@
 package com.childcareapp.pivak.fyplogin;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -31,6 +34,7 @@ import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeInfoDialog;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.interfaces.Closure;
 import com.childcareapp.pivak.fyplogin.Models.CompanyModel;
 import com.childcareapp.pivak.fyplogin.Models.Images;
+import com.childcareapp.pivak.fyplogin.Models.UserEducation;
 import com.childcareapp.pivak.fyplogin.Models.UserModel;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,8 +50,14 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
+
+import jxl.Cell;
+import jxl.Sheet;
+import jxl.Workbook;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -145,23 +155,173 @@ public class MainActivity extends AppCompatActivity {
 //
 
 
-        // Insert data to firestore
-//        final StudentProfile studentProfile = new StudentProfile("Sana", "Nasir", "Pakistan","Faisalabad",
-//                "","","f148016@nu.edu.pk","Alumni","","","","","","","","");
-//        final StudentEducation studentEducation  = new StudentEducation("Bechelors",
+        /// generate random userID
+        //int random = ThreadLocalRandom.current().nextInt(8011, 8060);
+        //txt1.setText("15f"+random+"@nu.edu.pk");
+
+        // generate random city
+//        String[] str={"Faisalabad", "Lahore", "Karachi", "Multan", "Peshawar", "Islamabad", "Quetta"};
+//        int random = ThreadLocalRandom.current().nextInt(0, 5);
+//        txt1.setText(str[random]);
+
+        //// random campus
+        // String[] str={"Islamabad", "Lahore", "Karachi", "Peshawar", "Faisalabad"};
+        //int random = ThreadLocalRandom.current().nextInt(0, 5);
+        //txt1.setText(str[random]);
+
+        //// random Discipline
+        // String[] str={"Computer Science", "Electric Engineering", "Management Sciences", "Accounting and Finance", "Civil Engineering"};
+        //int random = ThreadLocalRandom.current().nextInt(0, 5);
+        //txt1.setText(str[random]);
+
+        //// filter skills
+//        String ss="";
+//        String str="Android : 62, Project Planning : 52, C++ : 43, Microsoft Excel : 65, HTML : 34, Kotlin : 23, Graphic Designing : 34";
+//        String[] userSkills=str.split(",");
+//        String str1="Android, Graphic Designing, C++, HTML";
+//        String[] linkedInSkills=str1.split(",");
+//        for(int a=0; a< userSkills.length; a++)
+//        {
+//            for(int b=0; b<linkedInSkills.length; b++)
+//            {
+//                String[] currentSkill=userSkills[a].split(":");
+//                if(currentSkill[0].equalsIgnoreCase(linkedInSkills[b]) || currentSkill[0].contains(linkedInSkills[b]) || linkedInSkills[b]
+//                        .contains(currentSkill[0]))
+//                {
+//                    ss=ss+currentSkill[0];
+//                }
+//            }
+//        }
+//        txt1.setText(ss);
+
+
+
+
+
+
+
+//        String[] cities={"Faisalabad", "Lahore", "Karachi", "Multan", "Peshawar", "Islamabad", "Quetta"};
+//        String[] campus={"Islamabad", "Lahore", "Karachi", "Peshawar", "Faisalabad"};
+//        try
+//        {
+//            AssetManager assetManager=getAssets();
+//            InputStream is=assetManager.open("cs.xls");
+//            Workbook wb= Workbook.getWorkbook(is);
+//            Sheet s= wb.getSheet(0);
+//            int row=s.getRows();
+//            int col=s.getColumns();
+//            String xx="";
+//            //for(int c=0; c<10; c++)
+//            {
+//                //Cell cell=s.getCell(1,c);
+//                //xx=xx + cell.getContents()+"\n";
+//
+//                int random1= ThreadLocalRandom.current().nextInt(0, 5);
+//                final UserModel studentProfile = new UserModel(s.getCell(4,1).getContents(), s.getCell(5,1).getContents(),
+//                        "Pakistan",cities[random1],
+//                        "","",s.getCell(4,1).getContents()+s.getCell(5,1).getContents()+"@gmail.com","Student",
+//                        "","","","","BS","2015", "Computer Science",campus[random1],
+//                        "");
+//                final UserEducation userEducation  = new UserEducation("Bechelors",
+//                        "National University of Computer and Emerging Sciences", "Pakistan",campus[random1],"01-08-2015",
+//                        "01-06-2019");
+//
+//                // authenticate ID
+//                /// generate random userID
+//                final boolean[] falseID = {true};
+//                final int[] random = {8018};
+//                //txt1.setText("15f"+random+"@nu.edu.pk");
+//                    mAuth.createUserWithEmailAndPassword("f15"+ random[0] +"@nu.edu.pk", "123456")
+//                            .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<AuthResult> task) {
+//                                    if (task.isSuccessful()) {
+//                                        Toast.makeText(MainActivity.this, "Succeded", Toast.LENGTH_SHORT).show();
+//                                        mStore.collection("Users").document("Student")
+//                                                .collection("f15"+ random[0] +"@nu.edu.pk")
+//                                                .document("Profile").set(studentProfile).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                            @Override
+//                                            public void onSuccess(Void aVoid) {
+//                                                mStore.collection("Users").document("Student")
+//                                                        .collection("f15"+ random[0] +"@nu.edu.pk").document("Profile")
+//                                                        .collection("Education").add(userEducation).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                                                    @Override
+//                                                    public void onSuccess(DocumentReference aVoid) {
+//                                                        updateUsersList("f15"+ random[0] +"@nu.edu.pk");
+//                                                    }
+//                                                });
+////                                            mStore.collection("Users").document("Student").collection("f158280@nu.edu.pk").document("Profile").collection("Experience").add(studentExperience).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+////                                                @Override
+////                                                public void onSuccess(DocumentReference aVoid) {
+////                                                    Toast.makeText(MainActivity.this, "User Added Successfully", Toast.LENGTH_SHORT).show();
+////
+////                                                }
+////                                            });
+//                                                Toast.makeText(MainActivity.this, "User Added Successfully", Toast.LENGTH_SHORT).show();
+//
+//                                            }
+//                                        });
+//
+//                                    } else {
+//                                        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+//                                    }
+//                                    // ...
+//                                }
+//                            });
+//                //// end authentication
+//
+//            }
+//        }
+//        catch(Exception e)
+//        {
+//
+//        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         //Insert data to firestore
+//        final UserModel studentProfile = new UserModel("Usman", "Arif", "Pakistan","Faisalabad",
+//                "","","usman@nu.edu.pk","Faculty","","","","","","",""
+//                ,"");
+//        final UserEducation userEducation  = new UserEducation("Bechelors",
 //                "National University of Computer and Emerging Sciences", "Pakistan","Faisalabad","01-08-2015",
 //                "01-06-2019");
 //
-//                        mAuth.createUserWithEmailAndPassword("f148016@nu.edu.pk", "123456")
+//                        mAuth.createUserWithEmailAndPassword("usman@nu.edu.pk", "123456")
 //                        .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
 //                            @Override
 //                            public void onComplete(@NonNull Task<AuthResult> task) {
 //                                if (task.isSuccessful()) {
 //                                    Toast.makeText(MainActivity.this, "Succeded", Toast.LENGTH_SHORT).show();
-//                                    mStore.collection("Users").document("Student").collection("f148016@nu.edu.pk").document("Profile").set(studentProfile).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                    mStore.collection("Users").document("Student").collection("usman@nu.edu.pk")
+//                                            .document("Profile").set(studentProfile).addOnSuccessListener(new OnSuccessListener<Void>() {
 //                                        @Override
 //                                        public void onSuccess(Void aVoid) {
-//                                            mStore.collection("Users").document("Student").collection("f148016@nu.edu.pk").document("Profile").collection("Education").add(studentEducation).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                                            mStore.collection("Users").document("Student")
+//                                                    .collection("usman@nu.edu.pk").document("Profile")
+//                                                    .collection("Education").add(userEducation).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
 //                                                @Override
 //                                                public void onSuccess(DocumentReference aVoid) {
 //
@@ -185,7 +345,7 @@ public class MainActivity extends AppCompatActivity {
 //                                // ...
 //                            }
 //                        });
-// updateUsersList("f158016@nu.edu.pk");
+// updateUsersList("usman@nu.edu.pk");
 
 
 
@@ -287,18 +447,25 @@ public class MainActivity extends AppCompatActivity {
                                     else
                                     {
                                         String err=task.getException().getLocalizedMessage();
-                                        if(err.equals("There is no user record corresponding to this identifier. The user may have been deleted.") || !username.getText().toString().contains("@"))
-                                        {
-                                            showAlertDialog("Incorrect Username",
-                                                    "User name you entered doesn't exist. Please try again. \n");
-                                            enableSignInButton();
-                                            hideProgressbar();
+                                        if(isNetworkConnected()!=false && internetIsConnected()!=false) {
+                                            if (err.equals("There is no user record corresponding to this identifier. The user may have been deleted.") || !username.getText().toString().contains("@")) {
+                                                showAlertDialog("Incorrect Username",
+                                                        "User name you entered doesn't exist. Please try again. \n");
+                                                enableSignInButton();
+                                                hideProgressbar();
+                                            } else {
+                                                //Toast.makeText(MainActivity.this, "Invalid password", Toast.LENGTH_SHORT).show();
+                                                showAlertDialog("Incorrect Password",
+                                                        "The password you entered is incorrect. Please try again. \n");
+                                                //Snackbar.make(findViewById(R.id.main_layout), "Invalid Password", Snackbar.LENGTH_SHORT).show();
+                                                enableSignInButton();
+                                                hideProgressbar();
+                                            }
                                         }
                                         else
                                         {
-                                            //Toast.makeText(MainActivity.this, "Invalid password", Toast.LENGTH_SHORT).show();
-                                            showAlertDialog("Incorrect Password",
-                                                    "The password you entered is incorrect. Please try again. \n");
+                                            showAlertDialog("Internet not connected",
+                                                    "Check your internet connection and try again. \n");
                                             //Snackbar.make(findViewById(R.id.main_layout), "Invalid Password", Snackbar.LENGTH_SHORT).show();
                                             enableSignInButton();
                                             hideProgressbar();
@@ -397,9 +564,20 @@ public class MainActivity extends AppCompatActivity {
         pass.setEnabled(true);
         rememberMe.setEnabled(true);
     }
-//    public void hideSoftKeyboard(){
-//        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-//    }
+
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getApplication().getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null;
+    }
+
+    public boolean internetIsConnected() {
+        try {
+            String command = "ping -c 1 google.com";
+            return (Runtime.getRuntime().exec(command).waitFor() == 0);
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void showDialog(String title, String message)

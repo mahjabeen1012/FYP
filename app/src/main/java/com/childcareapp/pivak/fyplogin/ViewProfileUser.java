@@ -120,8 +120,6 @@ public class ViewProfileUser extends Fragment {
                         ModelNewsFeed newsFeed=document.toObject(ModelNewsFeed.class);
                         NewsFeedList newslist = new NewsFeedList(newsFeed.getContent(), newsFeed.getUploaderId(),newsFeed.getDownloadUrl(),newsFeed.getUploaderName(),newsFeed.getFiletype(),newsFeed.getTimeStamp(),newsFeed.getFileName(),newsFeed.getPostId(),newsFeed.getLikes(),newsFeed.getTimeInMillis());
                         newsFeedList.add(newslist);
-
-
                     }
                     //Toast.makeText(getContext(), Integer.toString(newsFeedList.size()), Toast.LENGTH_SHORT).show();
                 }
